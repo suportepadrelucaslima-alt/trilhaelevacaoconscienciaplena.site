@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcanjo Rafael</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', serif;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at top, #1b2f6b 0%, #0c1a44 60%, #070e28 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 36px 16px 52px;
+    }
+
+    /* ── Card ── */
+    .card {
+      width: 100%;
+      max-width: 430px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+      background: #fffdf5;
+      border: 2px solid #c9a130;
+    }
+
+    /* ── Imagem hero ── */
+    .hero {
+      width: 68%;
+      max-width: 260px;
+      height: auto;
+      display: block;
+      margin: 28px auto 10px;
+      border-radius: 14px;
+      border: 3px solid #c9a130;
+      box-shadow: 0 6px 28px rgba(201, 161, 48, 0.35);
+    }
+
+    /* ── Badge ── */
+    .badge {
+      background: linear-gradient(90deg, #1b2f6b, #2a44a0, #1b2f6b);
+      color: #f0d080;
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 12px 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* ── Conteúdo ── */
+    .content {
+      background: #fffdf5;
+      padding: 30px 26px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    /* ── Linha decorativa ── */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #c9a130, #f0d080, #c9a130);
+      border-radius: 2px;
+    }
+
+    /* ── Headline ── */
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 6.5vw, 34px);
+      font-weight: 900;
+      color: #0c1a44;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .headline em {
+      font-style: italic;
+      color: #9a6e00;
+    }
+
+    /* ── Texto de apoio ── */
+    .support-text {
+      font-size: clamp(15px, 4vw, 17px);
+      color: #3a3020;
+      text-align: center;
+      line-height: 1.65;
+      max-width: 340px;
+    }
+
+    /* ── Subheadline ── */
+    .subheadline {
+      font-size: clamp(14px, 3.5vw, 16px);
+      font-weight: 700;
+      color: #1b2f6b;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* ── Botão ── */
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, #c9a130, #f0d060, #b8891a);
+      color: #0c1a44;
+      font-family: 'Lora', serif;
+      font-size: clamp(18px, 5vw, 22px);
+      font-weight: 700;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 6px 22px rgba(180, 130, 0, 0.5);
+      transition: transform 0.15s, box-shadow 0.15s;
+      animation: glow 2.6s ease-in-out infinite;
+    }
+
+    .cta-btn:hover  { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(180,130,0,0.7); }
+    .cta-btn:active { transform: translateY(0); }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 6px 22px rgba(180,130,0,0.45); }
+      50%       { box-shadow: 0 6px 36px rgba(180,130,0,0.85); }
+    }
+
+    /* ── Acesso gratuito ── */
+    .instant {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: clamp(14px, 3.5vw, 15px);
+      color: #666;
+      font-family: 'Lora', serif;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      line-height: 2.2;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 400px) {
+      .content { padding: 24px 18px 28px; }
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="card">
+
+    <img
+      class="hero"
+      src="anjorafael.png"
+      alt="Arcanjo Rafael"
+      onerror="this.outerHTML='<div style=\'height:200px;background:#1b2f6b;display:flex;align-items:center;justify-content:center;font-size:80px\'>🕊️</div>'"
+    />
+
+    <div class="badge">
+      ✨ &nbsp; ARCANJO RAFAEL &nbsp; ✨
+    </div>
+
+    <div class="content">
+
+      <div class="divider"></div>
+
+      <h1 class="headline">
+        A Oração Sagrada que<br />
+        <em>Cura, Protege e<br />Abre Novos Caminhos</em>
+      </h1>
+
+      <p class="support-text">
+        O Arcanjo Rafael é o anjo da cura enviado por Deus.<br />
+        Ouça esta oração especial e sinta a proteção divina na sua vida.
+      </p>
+
+      <div class="divider"></div>
+
+      <p class="subheadline">Toque abaixo e ouça agora</p>
+
+      <a href="https://trilhaelevacaoconscienciaplena.site/vsl" class="cta-btn" id="cta-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+        </svg>
+        Ouvir a Oração Agora
+      </a>
+
+      <div class="instant">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#9a6e00" viewBox="0 0 16 16">
+          <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+        </svg>
+        Acesso imediato e gratuito
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Arcanjo Rafael. Todos os direitos reservados.<br />
+    <a href="termos.html">Termos de Uso</a> &nbsp;·&nbsp; <a href="privacidade.html">Política de Privacidade</a>
+  </footer>
+
+  <script>
+    (function () {
+      var params = window.location.search;
+      if (!params) return;
+      var btn = document.getElementById('cta-btn');
+      var base = btn.href;
+      btn.href = base + (base.indexOf('?') !== -1 ? '&' : '?') + params.slice(1);
+    })();
+  </script>
+</body>
+</html>
